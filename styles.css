@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,100&family=Poppins:wght@100;200;300;400;500;600;700&family=Sora:wght@200;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 :root{
     --cl-blue:#2A4DD0;
     --cl-green: #4CA154;
@@ -24,41 +23,59 @@ html{
     box-sizing: border-box;
     list-style: none;
 }
-
+svg{
+    width:25px;
+    height: 25px;
+    cursor: pointer;
+}
 body{
     font-family: 'Poppins', sans-serif;
-    /* background-color: red; */
-    /* height: 100%; */
-    /* max-width: 100vw; */
     min-height: 100vh;
 }
 body .container{
-    /* background-color: blue; */
     width: 100%;
     min-height: 100vh;
-    padding: 20px;
+    padding: 30px;
+    position: relative;
 }
 body .container nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
+body .container nav .nav-list{
+    position: absolute;
+    background-color: var(--cl-white);
+    color: var(--cl-black);
+    font-size: 1rem;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* transition: all 5s linear; */
 
+}
 body .container main{
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: repeat(2, 1fr);
-    align-content: center;
-
+    row-gap: 40px;
 }
 body .container main img{
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /* background-color: red; */
-    /* background-color: d; */
+    padding: 20px;
 }
+body .container main div{
+    height: 100%;
+    display: grid;
+    padding: 0 15px ;
+    gap: 1rem
 
+
+}
 body .container main h6{
     font-size: 0.875rem;
     text-transform: uppercase;
@@ -67,36 +84,38 @@ body .container main h6{
 }
 body .container main h1{
     font-size: 3.75rem;
-    width: 70%;
-    /* line-height: 1.5; */
+    line-height: 1.2;
     font-weight: 700;
     color: var(--cl-black);
+   
 }
 
 body .container main p{
+    max-width: 80%;
     color: var(--cl--extra);
     font-size: 1.125rem;
-    width: 70%;
-    line-height: 1.7;
+    line-height: 2;
+    font-weight: 600;
 }
 
 body .container main .btns{
-    width: 70%;
+    padding: 0;
+    width: 80%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* grid-template-rows: 80px; */
+    font-size: 1rem;
+    grid-template-columns: repeat(2, 1fr);
 }
 body .container main button{
     width: 100%;
     border: none;
     padding: 1rem;
-    font-size: 1rem;
+    
     font-weight: 600;
     background-color: var(--cl-blue);
     color: var(--cl-white);
     text-transform: uppercase;
     letter-spacing: 0.025rem;
-    border-radius: 7px;
+    border-radius: 15px;
     cursor: pointer;
 }
 
@@ -108,4 +127,27 @@ body .container main .btn{
     text-transform: capitalize;
 }
 
+body .container main div ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:1px;
+    
+}
+body .container main div ul li{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-weight: 200;
+    font-size: 0.875rem;
+   
+}
 
+body .container main div ul li svg{
+    object-fit: contain;
+    margin-right: 10px; 
+    
+}
+body .container main div ul li > p{
+     font-weight: 400;
+    }
