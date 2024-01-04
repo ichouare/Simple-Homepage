@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,100&family=Poppins:wght@100;200;300;400;500;600;700&family=Sora:wght@200;700&display=swap');
+
+:root{
+    --cl-blue:#2A4DD0;
+    --cl-green: #4CA154;
+    --cl-black:#111729;
+    --cl-white:#fff;
+    --cl-gris: #223344;
+    --cl-white-medium: #F2F9FE;
+    --cl--extra: #909193;
+}
+
+
+html{
+
+    scroll-behavior: smooth;
+    font-size: 16px;
+    /* height: 100vh; */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    /* background-color: red; */
+    /* height: 100%; */
+    /* max-width: 100vw; */
+    min-height: 100vh;
+}
+body .container{
+    /* background-color: blue; */
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+}
+body .container nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body .container main{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 1fr);
+    align-content: center;
+
+}
+body .container main img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* background-color: red; */
+    /* background-color: d; */
+}
+
+body .container main h6{
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025rem;
+    color: var(--cl-gris);
+}
+body .container main h1{
+    font-size: 3.75rem;
+    width: 70%;
+    /* line-height: 1.5; */
+    font-weight: 700;
+    color: var(--cl-black);
+}
+
+body .container main p{
+    color: var(--cl--extra);
+    font-size: 1.125rem;
+    width: 70%;
+    line-height: 1.7;
+}
+
+body .container main .btns{
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-rows: 80px; */
+}
+body .container main button{
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--cl-blue);
+    color: var(--cl-white);
+    text-transform: uppercase;
+    letter-spacing: 0.025rem;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+body .container main .btn{
+    width: 100%;
+    background-color: transparent;
+    color: var(--cl-blue);
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+
