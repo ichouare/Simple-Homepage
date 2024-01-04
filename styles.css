@@ -22,21 +22,25 @@ html{
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+    user-select: none;
 }
 svg{
-    width:25px;
-    height: 25px;
+    width: 30px;
+   height: 30px;
     cursor: pointer;
 }
 body{
     font-family: 'Poppins', sans-serif;
+    width: 100%;
     min-height: 100vh;
+   
 }
 body .container{
+    position: relative;
     width: 100%;
     min-height: 100vh;
     padding: 30px;
-    position: relative;
+    overflow: hidden;
 }
 body .container nav{
     display: flex;
@@ -51,11 +55,33 @@ body .container nav .nav-list{
     font-size: 1rem;
     bottom: 0;
     top: 0;
-    left: 0;
+    left: 120%;
     right: 0;
-    /* transition: all 5s linear; */
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 30px;
+    transition: all 0.4s ease-in-out;
+    font-size: 1.5rem;
 }
+
+body .container nav .nav-list ul {
+    width: 100%;
+    height: 300px;
+    /* max-height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 0 10%;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 0.025rem;
+    cursor: pointer;
+    /* background-color: blue; */
+}
+
 body .container main{
     display: grid;
     grid-template-columns: 100%;
