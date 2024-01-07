@@ -7,7 +7,6 @@ let Menushow = document.querySelector("body .container nav .Menu")
 let MenuItems = document.getElementsByClassName("item-list")
 let MainImg = document.querySelector("body .container main img")
 
-
 let btnDark = document.querySelector("body .container nav .nav-list-Desktop  .Dark-mode span:nth-child(3)")
 let btnLight = document.querySelector("body .container nav .nav-list-Desktop  .Dark-mode span:nth-child(2)")
 let btnToggle = document.querySelector("body .container nav .nav-list-Desktop  .Dark-mode .bg-icon")
@@ -76,17 +75,15 @@ item4.addEventListener("click", () => {
 
 
 btn_ligth.addEventListener("click", () => {
-    // console.log("here ligth");
-    btn_toggle.style.transform = "translateX(8px)";
+    btn_toggle.style.transform = "translateX(0%)";
     btn_ligth.querySelector("svg path").style.fill ="#000";
-    pathSvgwhite(btnDark)
+    pathSvgwhite(btn_dark)
     document.documentElement.classList.remove("dark")
     MainImg.classList.remove("dark");
 }, true)
 
 btn_dark.addEventListener("click", () => {
-    // console.log("here dark");
-    btn_toggle.style.transform = "translateX(48px)";
+    btn_toggle.style.transform = "translateX(122%)";
     btn_ligth.querySelector("svg path").style.fill ="#FFF";
     pathSvg();
     document.documentElement.setAttribute("class", "dark");
@@ -96,7 +93,7 @@ btn_dark.addEventListener("click", () => {
 
 btnLight.addEventListener("click", () => {
     console.log("here ligth");
-    btnToggle.style.transform = "translateX(8px)";
+    btnToggle.style.transform = "translateX(0px)";
     btnDark.querySelector("svg path").style.fill ="#000";
     pathSvgwhite(btnDark)
     document.documentElement.classList.remove("dark")
@@ -105,7 +102,7 @@ btnLight.addEventListener("click", () => {
 
 btnDark.addEventListener("click", () => {
     console.log("here dark");
-    btnToggle.style.transform = "translateX(48px)";
+    btnToggle.style.transform = "translateX(122%)";
     btnLight.querySelector("svg path").style.fill ="#FFF";
     // btnDark.querySelector("svg path").style.fill ="#FFF";
     pathSvg();

@@ -36,17 +36,18 @@ svg{
     width: 20px;
     height: 20px;
     cursor: pointer;
-    stroke:var(--cl-white)
+    /* stroke:var(--cl-white) */
 }
 .bg-icon{
+    position:absolute;
     width: 20px;
     height: 20px;
     border-radius:50%;
-    left: 2px;
+    left: 0;
     background-color: var(--cl-white);
     position: absolute;
     transition: all 0.3s linear;
-    transform: translateX(12px);
+    transform: translateX(0%);
     z-index: 1;
 }
 .nav-list-Desktop{
@@ -117,13 +118,13 @@ body .container main{
 
 body .container nav  .Dark-mode{
 
-    margin: 0 10%;
+    /* margin: 0 10%; */
     padding: 0;
-    width: 80px;
+    width: 45px;
     height: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr ;
-    place-content: center ;
+    place-content: center;
     border-radius: 15px;
     align-self: flex-start;
     background-color: var(--cl-black);
