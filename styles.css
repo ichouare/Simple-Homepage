@@ -33,20 +33,24 @@ html{
     user-select: none;
 }
 svg{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
+    stroke:var(--cl-white)
 }
 .bg-icon{
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
     border-radius:50%;
-    bottom: 1px;
+    left: 2px;
     background-color: var(--cl-white);
     position: absolute;
     transition: all 0.3s linear;
-    transform: translateX(8px);
+    transform: translateX(12px);
     z-index: 1;
+}
+.nav-list-Desktop{
+    display: none;
 }
 body{
     font-family: 'Poppins', sans-serif;
@@ -59,7 +63,7 @@ body .container{
     position: relative;
     width: 100%;
     min-height: 100vh;
-    padding: 30px;
+    padding: min(30px, 2vw);
     overflow: hidden;
 }
 body .container nav{
@@ -85,17 +89,15 @@ body .container nav .nav-list{
 }
 
 body .container nav .nav-list ul {
-    /* --gap: 2rem; */
     width: 100%;
     height: 300px;
     color: var(--cl--extra);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
-    padding: 0 10%;
+    gap:1em;
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: 0.5em;
     font-weight: 400;
     letter-spacing: 0.025rem;
     cursor: pointer;
@@ -108,26 +110,28 @@ body .container nav .nav-list ul li:hover {
 body .container main{
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, min(1fr, 50%));
     row-gap: 40px;
+  
 }
 
-body .container nav .nav-list .Dark-mode{
+body .container nav  .Dark-mode{
 
     margin: 0 10%;
     padding: 0;
     width: 80px;
+    height: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr ;
     place-content: center ;
     border-radius: 15px;
     align-self: flex-start;
-    background-color: var(--cl-gris);
+    background-color: var(--cl-black);
     cursor: pointer;
     position: relative;
     overflow: hidden;
 }
-body .container nav .nav-list .Dark-mode span{
+body .container nav   .Dark-mode span{
     display: grid;
     align-items: center;
     justify-content: center;
@@ -136,13 +140,17 @@ body .container nav .nav-list .Dark-mode span{
     padding: 0;
 }
 
-body .container nav .nav-list .Dark-mode svg{
+body .container nav .Dark-mode svg{
     z-index: 3;
     width: 25px;
     aspect-ratio: 1;
 
 }
-body .container nav .nav-list .Dark-mode svg path {
+body .container nav  .Dark-mode svg path {
+    fill:#000; 
+    stroke: #FFF;
+}
+body .container nav .nav-list-Desktop .Dark-mode svg path {
     fill:#000; 
     stroke: #FFF;
 }
@@ -156,7 +164,7 @@ body .container main img{
 body .container main div{
     height: 100%;
     display: grid;
-    padding: 0 15px ;
+    padding: 0 min(20px, 2vw) ;
     gap: 1rem
 
 
@@ -170,13 +178,14 @@ body .container main h6{
 body .container main h1{
     font-size: 3.75rem;
     line-height: 1.2;
-    font-weight: 700;
+    font-weight: 900;
+    width: min(800px, 100%);
     color: var(--cl-black);
    
 }
 
 body .container main p{
-    max-width: 80%;
+    width: min(80%, 400px);
     color: var(--cl--extra);
     font-size: 1.125rem;
     line-height: 2;
@@ -185,7 +194,7 @@ body .container main p{
 
 body .container main .btns{
     padding: 0;
-    width: 80%;
+    width: min(80%, 400px);
     display: grid;
     font-size: 1rem;
     grid-template-columns: repeat(2, 1fr);
@@ -214,17 +223,17 @@ body .container main .btn{
 
 body .container main div ul{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,  minmax(auto, 1fr));   
     gap:1px;
     
 }
 body .container main div ul li{
-    width: 100%;
+   max-width: 100%;
     padding: 0;
     display: flex;
     align-items: center;
     font-weight: 200;
-    font-size: 0.875rem;
+    /* font-size: 0.875rem; */
    
 }
 
@@ -233,14 +242,93 @@ body .container main div ul li svg{
     margin-right: 10px; 
     
 }
-body .container main div ul li > p{
+body .container main div ul li > span{
      font-weight: 400;
+     font-size: 0.875rem;
+     color: var(--cl--extra);
     }
 
 
 
 @media (min-width: 768px) {
-    body .container nav .Menu{
-        display: non;
+    body .container nav .Menu {
+        display: none;
     }
+    body .container nav .nav-list {
+        display: none;
+    }
+    body .container main{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, minmax(1fr, 50vh));
+        gap:0;
+    }
+    body .container  nav{
+
+        display: grid; 
+        grid-template-columns:  min(200px, 20vw) 1fr;
+        gap: 20px;
+    }
+    .nav-list-Desktop {
+        height: 100%;
+        display: grid; 
+        grid-template-columns:  1fr   min(200px, 8vw);
+    }
+    .nav-list-Desktop  ul{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, min(100px, 10.5vw));
+        place-content: center;
+        height: 100%;
+        font-size: 1rem;
+        text-transform: capitalize;
+        font-weight: 500;
+        color: var(--cl--extra);
+        /* display: flex;
+        align-items: center;
+        justify-content: space-around; */
+        padding-inline: min(10rem, 10vw);
+    }
+    .nav-list-Desktop  ul li:hover{
+        color: var(--cl-black);
+    }
+    body .container main div:nth-child(1) {
+        width: 100%;
+        display: flex;
+        place-content: center ;
+    }
+
+    body .container main div:nth-child(1) img{
+          width: 80%;
+    }
+    body .container main div:nth-child(2){
+        gap: 1.5rem;
+    }
+    /* body .container main div:nth-child(2) h1{
+          max-width: 80%;
+    }  */
+    body .container main div ul
+    {
+        display: grid;
+        grid-template-columns: repeat(2,  250px);   
+        gap:1px;
+    }
+    body .container main div ul li p{ width: auto};
+
+}
+
+@media (min-width: 1280px) {
+    body .container main{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        gap:0;
+    }
+  
+
+
 }
